@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
         paths: {
             dev: 'dev',
-            app: 'html',
+            app: 'www',
         },
 
         libs: [
