@@ -1,0 +1,37 @@
+<div class="view view-edit-post" ng-controller="editPostController as editPost">
+
+    <div id="content">
+
+        <section>
+
+            <h1>Edit post</h1>
+
+            <form name="editPost.postForm" ng-submit="editPost.submitHandler(editPost.postForm, editPost.post)" novalidate>
+                <fieldset>
+                    <legend>Edit post</legend>
+                    <div class="message message-error" ng-show="editPost.errorMessage">
+                        {{editPost.errorMessage}}
+                    </div>
+                    <div>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" ng-model="editPost.post.title" maxlength="255" required>
+                    </div>
+                    <div>
+                        <label for="body">Body</label>
+                        <textarea id="body" ng-model="editPost.post.body" required></textarea>
+                    </div>
+                </fieldset>
+                <div class="form-buttons">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+
+    <div class="navigation">
+        <a href="#/post/{{editPost.post.$id}}" class="primary">Back</a>
+    </div>
+
+</div>

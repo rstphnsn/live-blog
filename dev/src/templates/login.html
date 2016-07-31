@@ -1,0 +1,37 @@
+<div class="view view-login" ng-controller="loginController as login">
+
+    <div id="content">
+
+        <section>
+
+            <h1>Login</h1>
+
+            <form name="login.loginForm" ng-submit="login.submitHandler(login.loginForm, login.user)" novalidate>
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="message message-error" ng-show="login.errorMessage">
+                        {{login.errorMessage}}
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@example.com" ng-model="login.user.email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" ng-model="login.user.password" required>
+                    </div>
+                </fieldset>
+                <div class="form-buttons">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+
+    <div class="navigation">
+        <a href="#/" class="primary">Back</a>
+    </div>
+
+</div>

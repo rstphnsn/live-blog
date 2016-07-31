@@ -1,0 +1,22 @@
+<div class="view view-post" ng-controller="postController as post">
+
+    <div id="content">
+
+        <section>
+
+            <h1>{{post.post.title}}</h1>
+
+            <div>
+                {{post.post.body}}
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="navigation">
+        <a href="#/" class="primary">Back</a>
+        <a href="#/edit-post/{{post.post.$id}}" class="secondary" ng-show="$root.user">Edit</a>
+    </div>
+
+</div>

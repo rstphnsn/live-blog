@@ -1,0 +1,37 @@
+<div class="view view-add-post" ng-controller="addPostController as addPost">
+
+    <div id="content">
+
+        <section>
+
+            <h1>Add post</h1>
+
+            <form name="addPost.postForm" ng-submit="addPost.submitHandler(addPost.postForm, addPost.newPost)" novalidate>
+                <fieldset>
+                    <legend>Add post</legend>
+                    <div class="message message-error" ng-show="addPost.errorMessage">
+                        {{addPost.errorMessage}}
+                    </div>
+                    <div>
+                        <label for="title">Title</label>
+                        <input type="text" id="title" ng-model="addPost.newPost.title" maxlength="255" required>
+                    </div>
+                    <div>
+                        <label for="body">Body</label>
+                        <textarea id="body" ng-model="addPost.newPost.body" required></textarea>
+                    </div>
+                </fieldset>
+                <div class="form-buttons">
+                    <button type="submit">Add</button>
+                </div>
+            </form>
+
+        </section>
+
+    </div>
+
+    <div class="navigation">
+        <a href="#/" class="primary">Back</a>
+    </div>
+
+</div>

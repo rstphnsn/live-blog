@@ -12,31 +12,21 @@ window.app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
 
     .state('post',
         {
-            url: '/post/:id',
+            url: '/post/:postId',
             templateUrl: 'templates/post.html'
         }
     )
 
     .state('login',
         {
-            url: '/',
+            url: '/login',
             templateUrl: 'templates/login.html'
-        }
-    )
-
-    .state('admin',
-        {
-            url: '/',
-            templateUrl: 'templates/admin.html',
-            access: {
-                requiresLogin: true
-            }
         }
     )
 
     .state('add-post',
         {
-            url: '/',
+            url: '/add-post',
             templateUrl: 'templates/add-post.html',
             access: {
                 requiresLogin: true
@@ -46,7 +36,7 @@ window.app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
 
     .state('edit-post',
         {
-            url: '/',
+            url: '/edit-post/:postId',
             templateUrl: 'templates/edit-post.html',
             access: {
                 requiresLogin: true

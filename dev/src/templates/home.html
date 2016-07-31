@@ -1,44 +1,27 @@
-<div class="view view-home" ng-controller="HomeController as home">
+<div class="view view-home">
 
-    <div id="content" rol="main">
+    <div id="content">
 
         <section>
 
-            <h1>Queue</h1>
-            
-            <div ng-show="home.position === 0">
-                <h2>It’s your turn now.</h2>
-            </div>
-            
-            <div ng-show="home.thanks">
-                <h3>Thanks</h2>
-            </div>
+            <h1>Live blog</h1>
 
-            <div class="position" ng-show="home.position > 0">
-                <h2>You are number <em>{{home.position}}</em> in the queue</h2>
-            </div>
+            <div class="posts" ng-controller="listPostsController as list">
 
-            <div ng-show="home.position === -1 && !home.thanks">
-                <form ng-submit="home.addUser()">
-                    <fieldset>
-                        <legend>Join the queue</legend>
-                        <div>
-                            <label for="username">Name</label>
-                            <input type="text" id="username" ng-model="home.newUser.name">
-                        </div>
-                        <div>
-                            <label for="problem">Problem</label>
-                            <input type="text" id="problem" ng-model="home.newUser.problem">
-                        </div>
-                    </fieldset>
-                    <div class="form-buttons">
-                        <button type="submit">Add</button>
-                    </div>
-                </form>
+                <div class="post" ng-repeat="post in list.posts | orderBy: '-timestamp'">
+                    <h2><a href="#/post/{{post.$id}}">{{post.title}}</a></h2>
+                </div>
+
             </div>
 
         </section>
 
+    </div>
+
+    <div class="navigation">
+        <a href="#/add-post" class="primary" ng-show="$root.user">Add post</a>
+        <a href="#/login" class="secondary" ng-show="!$root.user">Login</a>
+        <a href="" class="secondary" ng-show="$root.user" ng-controller="logoutController as logout" ng-click="logout.logout()">Logout</a>
     </div>
 
 </div>

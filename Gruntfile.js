@@ -133,6 +133,7 @@ module.exports = function (grunt) {
             appjs: {
                 src: [
                     '<%= paths.app %>/assets/js/app/app.js',
+                    '<%= paths.app %>/assets/js/app/config/run.js',
                     '<%= paths.app %>/assets/js/app/config/routes.js',
                     '<%= paths.app %>/assets/js/app/config/constants.js',
                     '<%= paths.app %>/assets/js/services.js',
