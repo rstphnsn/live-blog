@@ -1,0 +1,19 @@
+//  ## VARIABLES  -------------------------------------------------------------------//
+
+// Base Typography
+$base--fontSize: 14px;
+$base--fontFamily: "Open Sans", Arial, sans-serif;
+$base--fontWeight: 300;
+
+// Base Colors
+$base--color: #222;
+$base--linkColor: #EF5BA1;
+$base--linkColorHover: darken($base--linkColor, 15%);
+
+$base--backgroundColor: #EEE;
+$base--ruleColor: #999;
+$base--ctaColor: #EF5BA1;
+$base--ctaColorHover: darken($base--ctaColor, 15%);
+
+$breakpoint-one: 420px;
+$breakpoint-two: 700px;

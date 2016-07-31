@@ -1,0 +1,41 @@
+//  ## HOME PAGE SPECIFIC  ----------------------------------------------------------//
+
+
+.view-home form {
+    margin-top: 60px;
+}
+
+.queue > div {
+    margin: 20px 0 0;   
+}
+
+.queue > div:first-child {
+    margin: 0;
+}
+
+.queue label {
+    font-weight: bold;
+}
+
+.queue label + div {
+    position: relative;
+}
+
+.queue input {
+    width: calc(100% - 40px);
+}
+
+.queue .cta {
+    bottom: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+}
+
+.queue .cta a {
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    width: 40px;
+}

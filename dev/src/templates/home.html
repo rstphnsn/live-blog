@@ -1,0 +1,44 @@
+<div class="view view-home" ng-controller="HomeController as home">
+
+    <div id="content" rol="main">
+
+        <section>
+
+            <h1>Queue</h1>
+            
+            <div ng-show="home.position === 0">
+                <h2>It’s your turn now.</h2>
+            </div>
+            
+            <div ng-show="home.thanks">
+                <h3>Thanks</h2>
+            </div>
+
+            <div class="position" ng-show="home.position > 0">
+                <h2>You are number <em>{{home.position}}</em> in the queue</h2>
+            </div>
+
+            <div ng-show="home.position === -1 && !home.thanks">
+                <form ng-submit="home.addUser()">
+                    <fieldset>
+                        <legend>Join the queue</legend>
+                        <div>
+                            <label for="username">Name</label>
+                            <input type="text" id="username" ng-model="home.newUser.name">
+                        </div>
+                        <div>
+                            <label for="problem">Problem</label>
+                            <input type="text" id="problem" ng-model="home.newUser.problem">
+                        </div>
+                    </fieldset>
+                    <div class="form-buttons">
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
