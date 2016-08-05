@@ -9,7 +9,7 @@
             <div class="posts" ng-controller="listPostsController as list">
 
                 <div class="post" ng-repeat="post in list.posts | orderBy: '-timestamp'">
-                    <h2><a href="#/post/{{post.$id}}">{{post.title}}</a></h2>
+                    <h2><a href="" ng-click="list.showPost(post.$id)">{{post.title}}</a></h2>
                 </div>
 
             </div>
@@ -18,9 +18,9 @@
 
     </div>
 
-    <div class="navigation">
-        <a href="#/add-post" class="primary" ng-show="$root.user">Add post</a>
-        <a href="#/login" class="secondary" ng-show="!$root.user">Login</a>
+    <div class="navigation" ng-controller="navigationController as nav">
+        <a href="" class="primary" ng-show="$root.user" ng-click="nav.addPost()">Add post</a>
+        <a href="" class="secondary" ng-show="!$root.user" ng-click="nav.login()">Login</a>
         <a href="" class="secondary" ng-show="$root.user" ng-controller="logoutController as logout" ng-click="logout.logout()">Logout</a>
     </div>
 

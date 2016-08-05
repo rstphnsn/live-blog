@@ -4,9 +4,7 @@
 
         <section>
 
-            <h1>Add post</h1>
-
-            <form name="addPost.postForm" ng-submit="addPost.submitHandler(addPost.postForm, addPost.newPost)" novalidate>
+            <form name="addPost.postForm" novalidate>
                 <fieldset>
                     <legend>Add post</legend>
                     <div class="message message-error" ng-show="addPost.errorMessage">
@@ -22,7 +20,7 @@
                     </div>
                 </fieldset>
                 <div class="form-buttons">
-                    <button type="submit">Add</button>
+                    <button type="submit" ng-click="addPost.submitHandler(addPost.postForm, addPost.newPost)">Add</button>
                 </div>
             </form>
 

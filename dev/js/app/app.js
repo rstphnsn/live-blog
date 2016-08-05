@@ -10,7 +10,8 @@ var app;
         'App.directives',
         'App.services',
         'firebase',
-        'angular-storage'
+        'angular-storage',
+        'ngTouch'
     ]);
 
     angular.module('App.controllers', []);

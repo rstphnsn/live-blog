@@ -16,6 +16,7 @@ module.exports = function (grunt) {
         },
 
         libs: [
+            '<%= paths.dev %>/js/libs/fastclick.min.js',
             '<%= paths.dev %>/js/libs/angular.min.js',
             '<%= paths.dev %>/js/libs/angular-ui-router.min.js',
             '<%= paths.dev %>/js/libs/angular-storage.min.js',
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
 
         jshint: {
             gruntfile: 'Gruntfile.js',
-            app: ['<%= paths.dev %>/js/app/**/*.js', '!<%= paths.dev %>/js/app/config/constants.js'],
+            app: ['<%= paths.dev %>/js/app/**/*.js', '!<%= paths.dev %>/js/app/config/run.js', '!<%= paths.dev %>/js/app/config/constants.js'],
             specs: ['<%= paths.dev %>/js/tests/**/*.js'],
             globals: {
                 "module": false,
@@ -233,7 +234,7 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     port: 8040,
-                    base: './html',
+                    base: './www',
                     hostname: '0.0.0.0'
                 }
             }
@@ -262,7 +263,7 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src: ['dev/js/app/config/constants.js'],
-                        dest: 'html/assets/js/app/config/'
+                        dest: 'www/assets/js/app/config/'
                     }
                 ]
             },
@@ -288,7 +289,7 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src: ['dev/js/app/config/constants.js'],
-                        dest: 'html/assets/js/app/config/'
+                        dest: 'www/assets/js/app/config/'
                     }
                 ]
             }
@@ -307,9 +308,9 @@ module.exports = function (grunt) {
     grunt.registerTask('html', ['clean:html', 'copy:html']);
     grunt.registerTask('templates', ['clean:templates', 'copy:templates']);
 
-    grunt.registerTask('dev', ['js', 'build-local', 'scss', 'images', 'fonts', 'html', 'templates', 'root', 'connect:dev', 'api', 'watch']);
+    grunt.registerTask('dev', ['js', 'build-local', 'scss', 'images', 'fonts', 'html', 'templates', 'root', 'connect:dev', 'watch']);
 
     // Targets
-    grunt.registerTask('default', ['js', 'build-local', 'scss', 'images', 'fonts', 'html', 'templates', 'root', 'api']);
+    grunt.registerTask('default', ['js', 'build-local', 'scss', 'images', 'fonts', 'html', 'templates', 'root']);
 
 };

@@ -2,6 +2,13 @@ window.app.run(function ($rootScope, Auth, $state) {
     'use strict';
     console.log('App: Running');
 
+    FastClick.attach(document.body);
+
+    if (window.StatusBar) {
+        StatusBar.styleBlackOpaque();
+        StatusBar.backgroundColorByName('black');
+    }
+
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $rootScope.user = user;
