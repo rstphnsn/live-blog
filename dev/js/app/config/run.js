@@ -2,6 +2,14 @@ window.app.run(function ($rootScope, Auth, $state) {
     'use strict';
     console.log('App: Running');
 
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        console.log(device.cordova);
+    }
+
+    console.log(window.cordova);
+
+
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $rootScope.user = user;
