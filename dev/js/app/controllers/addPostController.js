@@ -7,6 +7,7 @@ angular.module('App.controllers')
         posts,
         postsArray;
     vm.errorMessage = false;
+    console.log('logging some shit');
 
     posts = firebase.database().ref().child('posts');
     postsArray = $firebaseArray(posts);
